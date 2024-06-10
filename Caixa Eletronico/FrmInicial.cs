@@ -1,9 +1,11 @@
 using Caixa_Eletronico.Classes;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Caixa_Eletronico
 {
     public partial class FrmInicial : Form
     {
+        public List<Conta> contas = new List<Conta>();
         public FrmInicial()
         {
             InitializeComponent();
@@ -26,5 +28,14 @@ namespace Caixa_Eletronico
         {
             Application.Exit();
         }
+
+        private void btCaixa_Click(object sender, EventArgs e)
+        {
+            login adm = new login();
+            adm.Show();
+            this.Hide();
+        }
+
     }
 }
+

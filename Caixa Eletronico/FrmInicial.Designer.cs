@@ -34,9 +34,10 @@
             // 
             // btAdm
             // 
-            btAdm.Location = new Point(39, 45);
+            btAdm.Location = new Point(45, 60);
+            btAdm.Margin = new Padding(3, 4, 3, 4);
             btAdm.Name = "btAdm";
-            btAdm.Size = new Size(221, 23);
+            btAdm.Size = new Size(253, 31);
             btAdm.TabIndex = 0;
             btAdm.Text = "Acesso Administrativo";
             btAdm.UseVisualStyleBackColor = true;
@@ -44,20 +45,23 @@
             // 
             // btCaixa
             // 
-            btCaixa.Location = new Point(39, 89);
+            btCaixa.Location = new Point(45, 119);
+            btCaixa.Margin = new Padding(3, 4, 3, 4);
             btCaixa.Name = "btCaixa";
-            btCaixa.Size = new Size(221, 23);
+            btCaixa.Size = new Size(253, 31);
             btCaixa.TabIndex = 1;
             btCaixa.Text = "Caixa Eletrônico";
             btCaixa.UseVisualStyleBackColor = true;
+            btCaixa.Click += btCaixa_Click;
             // 
             // FrmInicial
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(298, 159);
+            ClientSize = new Size(341, 212);
             Controls.Add(btCaixa);
             Controls.Add(btAdm);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmInicial";

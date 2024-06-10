@@ -8,11 +8,16 @@ namespace Caixa_Eletronico.Classes
 {
     public abstract class Conta
     {
-        protected string numero;
+        public string numero;
         protected double saldo;
         protected double limite;
         protected bool status;
         protected List<Transacao> transacoes;
+
+        public List<Transacao> Transacoes
+        {
+            get => transacoes;
+        }
 
         public string Numero
         {
@@ -105,5 +110,7 @@ namespace Caixa_Eletronico.Classes
             }
             return false;
         }
+
+
     }
 }

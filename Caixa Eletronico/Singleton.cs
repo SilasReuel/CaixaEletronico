@@ -28,6 +28,7 @@ namespace Caixa_Eletronico
         }
 
         public List<Conta> contas;
+        public Conta logada;
 
         public Conta BuscarConta(string numero)
         {

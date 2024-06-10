@@ -43,7 +43,7 @@ namespace Caixa_Eletronico
             cboxTipo.Enabled = true;
             numLimite.Value = 0;
             numSaldo.Value = 0;
-            chbEspecial.Checked = false;
+            
             chbStatus.Checked = true;
 
             btSalvar.Enabled = false;
@@ -65,7 +65,6 @@ namespace Caixa_Eletronico
                     case 0:
                         CCorrente c = new CCorrente(numero, (double)numLimite.Value)
                         {
-                            Especial = chbEspecial.Checked
                         };
                         s.contas.Add(c);
                         break;
@@ -94,13 +93,12 @@ namespace Caixa_Eletronico
             {
                 numLimite.Value = 0;
                 numLimite.Enabled = false;
-                chbEspecial.Enabled = false;
-                chbEspecial.Checked = false;
+                
             }
             else
             {
                 numLimite.Enabled = true;
-                chbEspecial.Enabled = true;
+                
             }
         }
 
@@ -122,7 +120,7 @@ namespace Caixa_Eletronico
                 if (conta is CCorrente cc)
                 {
                     cboxTipo.SelectedIndex = 0;
-                    chbEspecial.Checked = cc.Especial;
+                    
                 }
                 else
                 {
@@ -147,7 +145,7 @@ namespace Caixa_Eletronico
             c.Limite = (double)numLimite.Value;
             if (c is CCorrente cc)
             {
-                cc.Especial = chbEspecial.Checked;
+                
             }
             MessageBox.Show("Alterado com sucesso!");
             LimparCampos();
@@ -171,6 +169,34 @@ namespace Caixa_Eletronico
             FrmInicial frm = new FrmInicial();
             frm.Show();
             this.Hide();
+        }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+            string numConta = "";
+        }
+
+        private void numLimite_ValueChanged(object sender, EventArgs e)
+        {
+            double limite = 0;
+        }
+
+        private void numSaldo_ValueChanged(object sender, EventArgs e)
+        {
+            double saldo = 0;
+        }
+
+        private void chbStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            bool status;
+            if (chbStatus.Checked)
+            {
+                status = true;
+            }
+            else
+            {
+                status=false;
+            }
         }
     }
 }

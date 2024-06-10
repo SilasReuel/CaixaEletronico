@@ -34,7 +34,6 @@
             label3 = new Label();
             label4 = new Label();
             txtNumero = new TextBox();
-            chbEspecial = new CheckBox();
             numLimite = new NumericUpDown();
             numSaldo = new NumericUpDown();
             cboxTipo = new ComboBox();
@@ -56,98 +55,98 @@
             dgvContas.AllowUserToResizeColumns = false;
             dgvContas.AllowUserToResizeRows = false;
             dgvContas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvContas.Location = new Point(12, 12);
+            dgvContas.Location = new Point(14, 16);
+            dgvContas.Margin = new Padding(3, 4, 3, 4);
             dgvContas.Name = "dgvContas";
             dgvContas.ReadOnly = true;
-            dgvContas.Size = new Size(450, 426);
+            dgvContas.RowHeadersWidth = 51;
+            dgvContas.Size = new Size(514, 568);
             dgvContas.TabIndex = 0;
             dgvContas.CellClick += dgvContas_CellClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(507, 47);
+            label1.Location = new Point(579, 63);
             label1.Name = "label1";
-            label1.Size = new Size(103, 15);
+            label1.Size = new Size(128, 20);
             label1.TabIndex = 1;
             label1.Text = "Número da conta:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(567, 130);
+            label2.Location = new Point(648, 173);
             label2.Name = "label2";
-            label2.Size = new Size(43, 15);
+            label2.Size = new Size(53, 20);
             label2.TabIndex = 2;
             label2.Text = "Limite:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(571, 175);
+            label3.Location = new Point(653, 233);
             label3.Name = "label3";
-            label3.Size = new Size(39, 15);
+            label3.Size = new Size(50, 20);
             label3.TabIndex = 3;
             label3.Text = "Saldo:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(577, 86);
+            label4.Location = new Point(659, 115);
             label4.Name = "label4";
-            label4.Size = new Size(33, 15);
+            label4.Size = new Size(42, 20);
             label4.TabIndex = 4;
             label4.Text = "Tipo:";
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(616, 44);
+            txtNumero.Location = new Point(704, 59);
+            txtNumero.Margin = new Padding(3, 4, 3, 4);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(123, 23);
+            txtNumero.Size = new Size(140, 27);
             txtNumero.TabIndex = 1;
-            // 
-            // chbEspecial
-            // 
-            chbEspecial.AutoSize = true;
-            chbEspecial.Location = new Point(616, 213);
-            chbEspecial.Name = "chbEspecial";
-            chbEspecial.Size = new Size(68, 19);
-            chbEspecial.TabIndex = 5;
-            chbEspecial.Text = "Especial";
-            chbEspecial.UseVisualStyleBackColor = true;
+            txtNumero.TextChanged += txtNumero_TextChanged;
             // 
             // numLimite
             // 
-            numLimite.Location = new Point(616, 128);
+            numLimite.Location = new Point(704, 171);
+            numLimite.Margin = new Padding(3, 4, 3, 4);
             numLimite.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numLimite.Name = "numLimite";
-            numLimite.Size = new Size(120, 23);
+            numLimite.Size = new Size(137, 27);
             numLimite.TabIndex = 3;
+            numLimite.ValueChanged += numLimite_ValueChanged;
             // 
             // numSaldo
             // 
-            numSaldo.Location = new Point(616, 173);
+            numSaldo.Location = new Point(704, 231);
+            numSaldo.Margin = new Padding(3, 4, 3, 4);
             numSaldo.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             numSaldo.Name = "numSaldo";
             numSaldo.ReadOnly = true;
-            numSaldo.Size = new Size(120, 23);
+            numSaldo.Size = new Size(137, 27);
             numSaldo.TabIndex = 4;
+            numSaldo.ValueChanged += numSaldo_ValueChanged;
             // 
             // cboxTipo
             // 
             cboxTipo.FormattingEnabled = true;
             cboxTipo.Items.AddRange(new object[] { "Conta Corrente", "Conta Poupança" });
-            cboxTipo.Location = new Point(616, 83);
+            cboxTipo.Location = new Point(704, 111);
+            cboxTipo.Margin = new Padding(3, 4, 3, 4);
             cboxTipo.Name = "cboxTipo";
-            cboxTipo.Size = new Size(121, 23);
+            cboxTipo.Size = new Size(138, 28);
             cboxTipo.TabIndex = 2;
             cboxTipo.SelectedIndexChanged += cboxTipo_SelectedIndexChanged;
             // 
             // btCadastrar
             // 
-            btCadastrar.Location = new Point(481, 415);
+            btCadastrar.Location = new Point(550, 553);
+            btCadastrar.Margin = new Padding(3, 4, 3, 4);
             btCadastrar.Name = "btCadastrar";
-            btCadastrar.Size = new Size(107, 23);
+            btCadastrar.Size = new Size(122, 31);
             btCadastrar.TabIndex = 7;
             btCadastrar.Text = "&Cadastrar Conta";
             btCadastrar.UseVisualStyleBackColor = true;
@@ -157,18 +156,21 @@
             // 
             chbStatus.AutoSize = true;
             chbStatus.Enabled = false;
-            chbStatus.Location = new Point(616, 238);
+            chbStatus.Location = new Point(704, 283);
+            chbStatus.Margin = new Padding(3, 4, 3, 4);
             chbStatus.Name = "chbStatus";
-            chbStatus.Size = new Size(58, 19);
+            chbStatus.Size = new Size(71, 24);
             chbStatus.TabIndex = 6;
             chbStatus.Text = "Status";
             chbStatus.UseVisualStyleBackColor = true;
+            chbStatus.CheckedChanged += chbStatus_CheckedChanged;
             // 
             // btSalvar
             // 
-            btSalvar.Location = new Point(594, 415);
+            btSalvar.Location = new Point(679, 553);
+            btSalvar.Margin = new Padding(3, 4, 3, 4);
             btSalvar.Name = "btSalvar";
-            btSalvar.Size = new Size(108, 23);
+            btSalvar.Size = new Size(123, 31);
             btSalvar.TabIndex = 8;
             btSalvar.Text = "&Salvar Alterações";
             btSalvar.UseVisualStyleBackColor = true;
@@ -176,9 +178,10 @@
             // 
             // btExcluir
             // 
-            btExcluir.Location = new Point(708, 415);
+            btExcluir.Location = new Point(809, 553);
+            btExcluir.Margin = new Padding(3, 4, 3, 4);
             btExcluir.Name = "btExcluir";
-            btExcluir.Size = new Size(75, 23);
+            btExcluir.Size = new Size(86, 31);
             btExcluir.TabIndex = 9;
             btExcluir.Text = "E&xcluir";
             btExcluir.UseVisualStyleBackColor = true;
@@ -186,9 +189,10 @@
             // 
             // btVoltar
             // 
-            btVoltar.Location = new Point(12, 444);
+            btVoltar.Location = new Point(14, 592);
+            btVoltar.Margin = new Padding(3, 4, 3, 4);
             btVoltar.Name = "btVoltar";
-            btVoltar.Size = new Size(75, 23);
+            btVoltar.Size = new Size(86, 31);
             btVoltar.TabIndex = 10;
             btVoltar.Text = "&Voltar";
             btVoltar.UseVisualStyleBackColor = true;
@@ -196,9 +200,10 @@
             // 
             // btCancelar
             // 
-            btCancelar.Location = new Point(93, 444);
+            btCancelar.Location = new Point(106, 592);
+            btCancelar.Margin = new Padding(3, 4, 3, 4);
             btCancelar.Name = "btCancelar";
-            btCancelar.Size = new Size(75, 23);
+            btCancelar.Size = new Size(86, 31);
             btCancelar.TabIndex = 11;
             btCancelar.Text = "Ca&ncelar";
             btCancelar.UseVisualStyleBackColor = true;
@@ -206,9 +211,9 @@
             // 
             // frmAdm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 475);
+            ClientSize = new Size(914, 633);
             Controls.Add(btCancelar);
             Controls.Add(btVoltar);
             Controls.Add(btExcluir);
@@ -218,13 +223,13 @@
             Controls.Add(cboxTipo);
             Controls.Add(numSaldo);
             Controls.Add(numLimite);
-            Controls.Add(chbEspecial);
             Controls.Add(txtNumero);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dgvContas);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CTiBank - Acesso Administrativo";
@@ -245,7 +250,6 @@
         private Label label3;
         private Label label4;
         private TextBox txtNumero;
-        private CheckBox chbEspecial;
         private NumericUpDown numLimite;
         private NumericUpDown numSaldo;
         private ComboBox cboxTipo;
